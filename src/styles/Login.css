@@ -1,0 +1,120 @@
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-title {
+    text-align: right;
+    margin-right: 26%;
+    position: relative;
+    top: 100px;
+    color: red;
+}
+
+.logo {
+    position: relative;
+    right: 205px;
+    border-radius: 12%;
+}
+
+.login-sub-container {
+    height: 35.3em;
+    width: 60.3em;
+    display: flex;
+    justify-content: center;
+    margin-top: 5.3em;
+}
+
+.login-left-img {
+    width: 45%;
+}
+
+.login-right-container {
+    position: relative;
+    left: 5%;
+    top: 9%;
+}
+
+.login-inp {
+    height: 3.3em;
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 8px;
+    outline: none;
+    font-family: "Roboto", sans-serif;
+    margin-top: 25px;
+    text-indent: 8px;
+}
+
+.login-desc {
+    position: relative;
+    top: 7px;
+    color: rgb(172, 171, 171);
+}
+
+.login-container button {
+    background-color: orangered;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    margin-top: 5%;
+    font-size: 15px;
+    color: white;
+    font-weight: 600;
+}
+
+.login-account {
+    margin-top: 4%;
+    margin-left: 1%;
+    text-align: center;
+}
+
+.login-account a {
+    color: red;
+    text-decoration: none;
+}
+
+.forgot-pass {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2%;
+}
+
+.forgot-pass a {
+    color: red;
+    text-decoration: none;
+}
+
+@media (max-width: 428px) {
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       left: -25px;
+       bottom: 12%;
+    }
+
+    .main-title {
+        top: 25%;
+        text-align: center;
+    }
+
+    .login-right-container {
+        margin-left: -57%;
+        margin-top: 15%;
+    }
+}
+
+@media (max-width: 884px) {
+    .logo {
+        width: 100%;
+        margin-left: 44%;
+        margin-top: 18%;
+    }
+
+    .main-title {
+        left: 14.5%;
+    }
+}

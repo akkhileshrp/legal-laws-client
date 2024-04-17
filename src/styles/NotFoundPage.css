@@ -1,0 +1,19 @@
+.notfoundpage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.redirect {
+    margin-left: 46%;
+    padding: 10px;
+    background-color: orangered;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+}

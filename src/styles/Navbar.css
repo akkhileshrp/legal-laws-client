@@ -1,0 +1,152 @@
+.navbar {
+    height: 80px;
+    width: 100%;
+    background-color: #cecece;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    left: 0;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.navbar-title {
+    height: 80px;
+    width: 20%;
+    position: relative;
+    right: 9%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: red;
+}
+
+.navbar-title a {
+    text-decoration: none;
+    color: red;
+}
+
+.navbar-title p {
+    color: black;
+}
+
+.navbar-links {
+    height: 80px;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style-type: none;
+    position: relative;
+    left: 7.5%;
+    font-weight: 900;
+    color: #515050;
+    font-size: 18px;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: #515050;
+}
+
+.navbar-logout {
+    padding: 6px;
+    width: 6%;
+    background-color: red;
+    border: none;
+    color: white;
+    font-weight: 600;
+    font-family: "Roboto", sans-serif;
+    position: relative;
+    left: 4%;
+    cursor: pointer;
+}
+
+.menu-icon {
+    display: none;
+}
+
+@media (max-width: 428px) {
+    .menu-icon {
+        display: block;
+        position: absolute;
+        z-index: 1000;
+        cursor: pointer;
+        margin-left: 85%;
+        margin-bottom: 0.8%;
+    }
+
+    .navbar-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1em;
+        background-color: rgb(196, 196, 196);
+        list-style-type: none;
+        font-size: 20px;
+        cursor: pointer;
+        z-index: 999;
+        line-height: 50px;
+    }
+
+    .navbar-links.active {
+        display: block;
+    }
+
+    .navbar-title {
+        width: 100%;
+        position: relative;
+        left: 25px;
+    }
+
+    .navbar-title p {
+       position: relative;
+       right: 22px;
+    }
+}
+
+@media (max-width: 884px)
+{
+    .menu-icon {
+        display: block;
+        position: absolute;
+        z-index: 1000;
+        cursor: pointer;
+        margin-left: 85%;
+        margin-bottom: 0.8%;
+    }
+
+    .navbar-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1em;
+        background-color: rgb(196, 196, 196);
+        height: 40vh;
+        list-style-type: none;
+        font-size: 20px;
+        cursor: pointer;
+        z-index: 999;
+        line-height: 50px;
+    }
+
+    .navbar-links.active {
+        display: block;
+    }
+
+    .navbar-title {
+        width: 100%;
+        margin-left: -55%;
+    }
+
+    .navbar-title p {
+        margin-left: -9%;
+    }
+}

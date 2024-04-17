@@ -1,0 +1,142 @@
+.inline-inp {
+    display: flex;
+    column-gap: 10px;
+}
+
+.login-inp-otp {
+    height: 3.3em;
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 8px;
+    outline: none;
+    font-family: "Roboto", sans-serif;
+    margin-top: 25px;
+    text-indent: 8px;
+}
+
+.register-img {
+    top: 115px;
+}
+
+.register-title {
+    right: 78px;
+}
+
+.otp-btn {
+    padding: 10px;
+    width: 17.87%;
+    position: relative;
+    top: 8px;
+    left: 0;
+    border: none;
+    background-color: royalblue;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.reg-btn {
+    width: 100%;
+
+    background-color: royalblue;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 5%;
+    color: white;
+    font-weight: 600;
+    font-family: "Roboto", sans-serif;
+}
+
+@media (max-width: 428px) {
+    .register-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: -12%;
+        left: 20%;
+    }
+
+    .register-title {
+        position: relative;
+        left: 12%;
+    }
+
+    .register-desc {
+        left: 12%;
+        width: 80%;
+    }
+
+    .inline-inp {
+        width: 78%;
+        margin-left: 12%;
+    }
+
+    .reg {
+        width: 78%;
+        margin-left: 12%;
+    }
+
+    .reg-btn {
+        width: 78%;
+        position: relative;
+        left: 10px;
+        background-color: royalblue;
+        border: none;
+        padding: 10px;
+        border-radius: 8px;
+        margin-top: 5%;
+        color: white;
+        font-weight: 600;
+        font-family: "Roboto", sans-serif;
+    }
+
+    .otp-btn {
+        margin-left: 12%;
+    }
+
+    .register-account {
+        position: relative;
+        left: 35px;
+    }
+}
+
+@media (max-width: 884px) {
+    .register-img {
+        left: -40%;
+    }
+
+    .inline-inp,
+    .reg {
+        width: 78%;
+    }
+
+    .reg-btn {
+        width: 78%;
+        margin-left: 10%;
+        position: relative;
+        right: 45px;
+        background-color: royalblue;
+        border: none;
+        padding: 10px;
+        border-radius: 8px;
+        margin-top: 5%;
+        color: white;
+        font-weight: 600;
+        font-family: "Roboto", sans-serif;
+    }
+
+    .register-desc {
+        width: 80%;
+    }
+
+    .register-main {
+        position: relative;
+        left: 50px;
+    }
+
+    .register-account {
+        margin-left: -60px;
+    }
+}

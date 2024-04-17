@@ -1,0 +1,63 @@
+.laws-img {
+    height: 100vh;
+    width: 100%;
+    margin-top: 2%;
+}
+
+.laws-main-con {
+    position: absolute;
+    bottom: 55%;
+    left: 2%;
+    width: 20%;
+    line-height: 45px;
+}
+
+.laws-main-desc {
+    margin-top: -27%;
+    width: 35%;
+    line-height: 28px;
+    margin-left: 2%;
+}
+
+.hammer {
+    margin-left: 1.3%;
+    margin-top: 1%;
+}
+
+.laws-bullet {
+    display: flex;
+    flex-direction: column;
+}
+
+.laws-sub span {
+    position: relative;
+    left: 2%;
+    bottom: 10px;
+    font-weight: 600;
+}
+
+.back-grd {
+    height: 100vh;
+    width: 100%;
+    margin-top: 10%;
+}
+
+.laws-main-content {
+    margin-top: -42%;
+    display: flex;
+}
+
+.laws-main-content h1
+{
+    line-height: 45px;
+    color: #494848;
+    margin-left: 2%;
+}
+
+.laws-main-descrip {
+    margin-left: 55%;
+    width: 30%;
+    margin-top: 0.5%;
+    font-weight: bold;
+    line-height: 28px;
+}
