@@ -19,7 +19,7 @@ export default function Login() {
                             <input className="login-inp" type="email" placeholder="abc@gmail.com" />
                             <input className="login-inp" type="password" placeholder="********" />
                             <div className="forgot-pass">
-                                <a href="">Forgot Password</a>
+                                <Link to="/forgot-password">Forgot Password</Link>
                             </div>
                             <button>Login</button>
                             <div className="login-account">

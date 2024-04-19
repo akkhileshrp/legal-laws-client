@@ -49,7 +49,7 @@ export default function Register() {
             register.phonenumber === "" ||
             register.password === "" ||
             register.confirmpassword === "" ||
-            register.otp === ""
+            otp === ""
         )
             return toast.error("Please fill all the required fields");
         if (register.password !== register.confirmpassword)
@@ -174,7 +174,8 @@ export default function Register() {
                                 type="text"
                                 className="login-inp-otp reg"
                                 placeholder="One Time Password"
-                                name="otp" value={otp}
+                                name="otp" 
+                                value={otp}
                                 onChange={(e) => setOtp(e.target.value)}
                             />
                             <br />
