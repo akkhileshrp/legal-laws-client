@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import "../styles/ForgotPassword.css";
+import { useNavigate } from "react-router-dom";
 
 export default function ForgotPassword() {
     const [forgotpassword, setForgotPassword] = useState({
@@ -8,6 +9,7 @@ export default function ForgotPassword() {
         password: "",
         confirmpassword: "",
     });
+    const navigate = useNavigate();
     const [otp, setOtp] = useState("");
     const [sendingOtp, setSendingOtp] = useState(false);
     const [changePassword, setChangePassword] = useState(false);
@@ -63,6 +65,7 @@ export default function ForgotPassword() {
                 setChangePassword(false);
                 if (data.ok) {
                     toast.success("Password reset successfully. Return to login.");
+                    navigate("/login");
                     setOtp("");
                     setForgotPassword({
                         email: "",

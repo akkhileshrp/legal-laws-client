@@ -8,6 +8,7 @@ import consumer from "../assets/consumer.jpg";
 import backgrd from "../assets/backgrd.png";
 import bulletlogo from "../assets/bulletlogo.png";
 import "../styles/Homepage.css";
+import Navbar from "./Navbar";
 
 export default function Homepage() {
     const datas = [
@@ -17,6 +18,7 @@ export default function Homepage() {
     ]
     return (
         <>
+            <Navbar />
             <img src={homepageImg} alt="homelogo" className="main-logo" />
             <div className="homepage-content">
                 <h1>Welcome to the village<br />Community Website,<br />your source for local laws</h1>
