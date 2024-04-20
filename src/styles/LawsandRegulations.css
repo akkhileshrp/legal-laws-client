@@ -101,6 +101,11 @@
     margin-left: 00px;
 }
 
+.laws-cat div[class*="-con"] a {
+    color: #494949;
+    text-decoration: none;
+}
+
 .laws-cat div[class*="-con"] img {
     border-radius: 50%;
     border: 2px solid #c1c1c1;

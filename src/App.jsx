@@ -9,6 +9,12 @@ import ForgotPassword from "./components/ForgotPassword";
 import { AuthContext } from "./context/AuthContext";
 import RouteProtection from "./PrivateRoute/RouteProtection";
 import { Route, Routes } from "react-router-dom";
+import PropertyLaw from "./pages/PropertyLaw";
+import EducationalLaw from "./pages/EducationLaw";
+import HealthLaw from "./pages/HealthLaw";
+import CriminalLaw from "./pages/CriminalLaw";
+import CyberLaw from "./pages/CyberLaw";
+import LabourLaw from "./pages/LabourLaw";
 
 export default function App() {
     const [loggedUser, setLoggedUser] = useState(JSON.parse(localStorage.getItem("token")));
@@ -22,6 +28,12 @@ export default function App() {
                     <Route path="/forgot-password" element={<ForgotPassword />} />
                     <Route path="/contact" element={<RouteProtection Component={Contact} />} />
                     <Route path="/lawsandregulations" element={<RouteProtection Component={LawsandRegulations} />} />
+                    <Route path="/lawsandregulations/propertylaw" element={<RouteProtection Component={PropertyLaw} />} />
+                    <Route path="/lawsandregulations/educationlaw" element={<RouteProtection Component={EducationalLaw} />} />
+                    <Route path="/lawsandregulations/healthlaw" element={<RouteProtection Component={HealthLaw} />} />
+                    <Route path="/lawsandregulations/criminallaw" element={<RouteProtection Component={CriminalLaw} />} />
+                    <Route path="/lawsandregulations/cyberlaw" element={<RouteProtection Component={CyberLaw} />} />
+                    <Route path="/lawsandregulations/labourlaw" element={<RouteProtection Component={LabourLaw} />} />
                     <Route path="*" element={<NotFoundPage />} />
                 </Routes>
             </AuthContext.Provider>
