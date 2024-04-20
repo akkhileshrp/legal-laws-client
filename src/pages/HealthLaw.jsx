@@ -7,10 +7,10 @@ import hospital_bullet from "../assets/hospital-buller.png";
 
 export default function Healthlaw() {
     const datas = [
-        { image: hospital_bullet, title: "Ownership Rights: ", description: "Property law defines what you can do with something you own, like land or a car. It gives you the right to possess, use, and control your property, and it protects  you from others taking or damaging it without permission." },
-        { image: hospital_bullet, title: "Types of Property: ", description: "There are two main types of property: real property, which includes land and buildings, and personal property, which includes things you can move like cars, furniture, and belongings" },
-        { image: hospital_bullet, title: "Acquiring Property: ", description: "You can get property in different ways, like buying it, inheriting it, receiving it as a gift, or using it for a certain period of time (like renting). Property law explains the legal steps you need to take to own or use property." },
-        { image: hospital_bullet, title: "Property Transactions: ", description: "Property law covers buying, selling, renting, or borrowing property. It includes things like contracts and agreements that outline what each person involved has to do, like paying rent on time or keeping the property in good condition." },
+        { image: hospital_bullet, title: "Access to Healthcare: ", description: "Health law ensures that everyone has the right to access healthcare services they need, regardless of their income, age, or health condition." },
+        { image: hospital_bullet, title: "Patient Rights: ", description: "It protects patients' rights to receive safe, quality care, including the right to privacy, informed consent, and confidentiality of medical information." },
+        { image: hospital_bullet, title: "Health Insurance: ", description: "Health law governs health insurance companies and policies to ensure fair coverage, affordable premiums, and protection against discrimination." },
+        { image: hospital_bullet, title: "Consumer Protection: ", description: "It protects consumers from fraudulent or harmful healthcare practices and ensures they have access to accurate information about treatments and products." },
     ]
     return (
         <>
