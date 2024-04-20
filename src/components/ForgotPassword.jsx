@@ -21,7 +21,7 @@ export default function ForgotPassword() {
     };
     const otpGenerate = () => {
         setSendingOtp(true);
-        fetch("http://localhost:8000/auth/send-otp", {
+        fetch("https://legal-laws-server.onrender.com/auth/send-otp", {
             method: "POST",
             body: JSON.stringify({ email: forgotpassword.email }),
             headers: { "Content-Type": "application/json" },

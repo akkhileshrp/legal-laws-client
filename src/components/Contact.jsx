@@ -21,7 +21,7 @@ export default function Contact() {
         if (contact.message.split(" ").length < 100) {
             return toast.error("Message should be at least 100 words. And make sure to fill all the fields.");
         }
-        fetch("http://localhost:8000/contact", {
+        fetch("https://legal-laws-server.onrender.com/contact", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(contact),
