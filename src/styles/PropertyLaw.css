@@ -1,0 +1,71 @@
+.property-banner {
+    height: 100vh;
+    width: 100%;
+    margin-top: 4.9%;
+}
+
+.property-law-content {
+    margin-top: -40%;
+}
+
+.property-law-content h1 {
+    width: 30%;
+    line-height: 48px;
+    margin-left: 2%;
+}
+
+.property-law-content input[type="search"] {
+    width: 20%;
+    text-indent: 12px;
+    height: 35px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    outline: none;
+    margin: 2% 30px;
+    font-family: "Roboto", sans-serif;
+}
+
+.property-hero-img {
+    margin-top: 18.9%;
+    height: 120vh;
+    width: 100%;
+}
+
+.separate {
+    display: flex;
+    flex-direction: row;
+}
+
+.prop-law-head {
+    margin-top: -50%;
+    margin-left: 2%;
+    width: 25%;
+    line-height: 48px;
+}
+
+.prop-law-desc {
+    margin-top: -49.8%;
+    width: 20%;
+    margin-left: 50%;
+    font-size: 18px;
+    line-height: 38px;
+    font-weight: 400;
+}
+
+.key-points {
+    margin-top: -30%;
+    margin-left: 2%;
+    font-weight: 500;
+}
+
+.points {
+    margin-left: 2%;
+    margin-top: 10px;
+}
+
+.points p {
+    position: relative;
+    bottom: 44px;
+    left: 50px;
+    width: 70%;
+}
