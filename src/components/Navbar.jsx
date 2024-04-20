@@ -1,13 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "../styles/Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import { AuthContext } from "../context/AuthContext";
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const toggleMenu = () => setMenuOpen(!menuOpen);
-
+    const navigate = useNavigate();
+    const loggedUserData = useContext(AuthContext);
+    const logout = () => {
+        localStorage.removeItem("token");
+        loggedUserData.setLoggedUser(null);
+        navigate("/login");
+    };
     return (
         <>
             <nav className="navbar">
@@ -23,7 +30,7 @@ export default function Navbar() {
                     <li><Link to="/lawsandregulations">Laws&Regulations</Link></li>
                     <li><Link to="/resources">Resources</Link></li>
                     <li><Link to="/contact">Contact</Link></li>
-                    <li>Logout</li>
+                    <li onClick={logout}>Logout</li>
                 </ul>
             </nav>
         </>
