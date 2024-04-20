@@ -23,7 +23,7 @@ export default function Register() {
     };
     const otpGenerate = () => {
         setSendingOtp(true);
-        fetch("http://localhost:8000/auth/send-otp", {
+        fetch("https://legal-laws-server.onrender.com/auth/send-otp", {
             method: "POST",
             body: JSON.stringify({ email: register.email }),
             headers: { "Content-Type": "application/json" },
@@ -56,7 +56,7 @@ export default function Register() {
             return toast.error("Password does not match");
         if (register.password.length < 8)
             return toast.error("Password must be at least 8 characters");
-        fetch("http://localhost:8000/auth/register", {
+        fetch("https://legal-laws-server.onrender.com/auth/register", {
             method: "POST",
             body: JSON.stringify({
                 firstName: register.firstname,

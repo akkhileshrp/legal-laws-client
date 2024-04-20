@@ -52,7 +52,7 @@ export default function ForgotPassword() {
             return toast.error("Password does not match");
         if (forgotpassword.password.length < 8)
             return toast.error("Password must be at least 8 characters");
-        fetch("http://localhost:8000/auth/reset-password", {
+        fetch("https://legal-laws-server.onrender.com/auth/reset-password", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
