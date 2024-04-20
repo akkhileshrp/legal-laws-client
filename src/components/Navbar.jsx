@@ -30,7 +30,7 @@ export default function Navbar() {
                     <li><Link to="/lawsandregulations">Laws&Regulations</Link></li>
                     <li><Link to="/resources">Resources</Link></li>
                     <li><Link to="/contact">Contact</Link></li>
-                    <li onClick={logout}>Logout</li>
+                    <li style={{ cursor: "pointer" }} onClick={logout}>Logout</li>
                 </ul>
             </nav>
         </>

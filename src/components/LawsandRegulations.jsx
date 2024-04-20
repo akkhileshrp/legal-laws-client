@@ -4,6 +4,12 @@ import lawsandregu from "../assets/lawsandregu.png";
 import hammer from "../assets/hammer-back.png";
 import backgrd from "../assets/backgrd.png";
 import "../styles/LawsandRegulations.css";
+import property_law from "../assets/home-law.png";
+import health_law from "../assets/health-law.png";
+import labour_law from "../assets/labour-law.png";
+import education_law from "../assets/education-law.png";
+import criminal_law from "../assets/criminal-law.png";
+import cyber_law from "../assets/cyber-law.png";
 
 export default function LawsandRegulations() {
     const datas = [
@@ -39,7 +45,34 @@ export default function LawsandRegulations() {
                 </div>
             </div>
             <div className="laws-cat">
-                
+                <div className="laws-cat-one">
+                    <div className="laws-cat-one-con">
+                        <img src={property_law} alt="property-law" height={50} width={50} />
+                        <span>Property Law</span>
+                    </div>
+                    <div className="laws-cat-two-con">
+                        <img src={health_law} alt="health-law" height={50} width={50} />
+                        <span>Health Law</span>
+                    </div>
+                    <div className="laws-cat-three-con">
+                        <img src={labour_law} alt="health-law" height={50} width={50} />
+                        <span>Labour Law</span>
+                    </div>
+                </div>
+                <div className="laws-cat-two">
+                    <div className="laws-cat-four-con">
+                        <img src={education_law} alt="education-law" height={50} width={50} />
+                        <span>Education Law</span>
+                    </div>
+                    <div className="laws-cat-five-con">
+                        <img src={criminal_law} alt="education-law" height={50} width={50} />
+                        <span>Criminal Law</span>
+                    </div>
+                    <div className="laws-cat-six-con">
+                        <img src={cyber_law} alt="education-law" height={50} width={50} />
+                        <span>Cyber Law</span>
+                    </div>
+                </div>
             </div>
         </>
     );
