@@ -1,25 +1,63 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import Navbar from "../components/Navbar";
 import labour_banner from "../assets/labour-banner.png";
 import herobanner from "../assets/backgrd.png";
 import "../styles/PropertyLaw.css";
 import labour_bullet from "../assets/labour-bullet.png";
+import { AuthContext } from "../context/AuthContext";
+import LawDescriptionPage from "../pages/LawDescriptionPage";
 
 export default function LabourLaw() {
+    const loggedUserData = useContext(AuthContext);
     const datas = [
         { image: labour_bullet, title: "Employee Rights: ", description: "Labor laws protect workers' rights to join labor unions, collectively bargain with employers, and take legal action if their rights are violated, empowering them to advocate for fair treatment and better working conditions." },
         { image: labour_bullet, title: "Working Conditions: ", description: "These laws establish safety standards to protect workers from hazards in the workplace, such as dangerous machinery, toxic chemicals, or unsafe working environments." },
         { image: labour_bullet, title: "Wages and Hours: ", description: "Labor laws set minimum wage levels and regulate the number of hours employees can work in a day or week to prevent exploitation and ensure fair compensation for their time and effort." },
         { image: labour_bullet, title: "Family and Medical Leave: ", description: "Labor laws provide provisions for family and medical leave, allowing workers to take time off for personal or family health reasons without risking their job security." },
         { image: labour_bullet, title: "Unemployment Benefits: ", description: "These laws establish eligibility criteria and procedures for workers to claim unemployment benefits if they lose their job through no fault of their own, providing temporary financial assistance during periods of unemployment." },
-    ]
+    ];
+    const [input, setInput] = useState("");
+    const [result, setResult] = useState([]);
+    const fetchResult = (value) => {
+        fetch("http://localhost:8000/lawsandregulations/labourlaws/", {
+            method: "GET",
+            headers: { Authorization: `Bearer ${loggedUserData.loggedUser.token}` }
+        })
+            .then((res) => res.json())
+            .then((json) => {
+                console.log(json);
+                const results = json.data.filter((user) => {
+                    return value && user && user.section_title && user.section_title.toLowerCase().includes(value);
+                });
+                setResult(results);
+            })
+            .catch((err) => console.error(err));
+    };
+    const handleChange = (value) => {
+        setInput(value);
+        fetchResult(value);
+    };
     return (
         <>
             <Navbar />
             <img src={labour_banner} alt="property-banner" className="property-banner" />
             <div className="property-law-content">
                 <h1>Empowering Our Village Through Knowledge of  Health Law</h1>
-                <input type="search" placeholder="Search for more information" />
+                <input
+                    type="search"
+                    placeholder="Search for more information"
+                    value={input}
+                    onChange={(e) => handleChange(e.target.value)}
+                />
+                {result.length !== 0 ? (
+                    <div className="search-results">
+                        {result.map((item) => (
+                            <p className="search-item" key={item._id}>
+                                {item.section_title}
+                            </p>
+                        ))}
+                    </div>
+                ) : null}
             </div>
             <div className="property-law-hero">
                 <img src={herobanner} alt="hero-banner" className="property-hero-img" />

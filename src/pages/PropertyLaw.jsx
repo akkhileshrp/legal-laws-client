@@ -8,6 +8,7 @@ import { AuthContext } from "../context/AuthContext";
 import LawDescriptionPage from "../pages/LawDescriptionPage";
 
 export default function PropertyLaw() {
+    const loggedUserData = useContext(AuthContext);
     const datas = [
         { image: home_bullet, title: "Ownership Rights: ", description: "Property law defines what you can do with something you own, like land or a car. It gives you the right to possess, use, and control your property, and it protects  you from others taking or damaging it without permission." },
         { image: home_bullet, title: "Types of Property: ", description: "There are two main types of property: real property, which includes land and buildings, and personal property, which includes things you can move like cars, furniture, and belongings" },
@@ -17,10 +18,12 @@ export default function PropertyLaw() {
     const [input, setInput] = useState("");
     const [result, setResult] = useState([]);
     const fetchData = (value) => {
-        fetch("http://localhost:8000/lawsandregulations/propertylaws/")
+        fetch("https://legal-laws-server.onrender.com/lawsandregulations/propertylaws/", {
+            method: "GET",
+            headers: { Authorization: `Bearer ${loggedUserData.loggedUser.token}` }
+        })
             .then((res) => res.json())
             .then((json) => {
-                console.log(json);
                 const results = json.data.filter((user) => {
                     return value && user && user.section_title && user.section_title.toLowerCase().includes(value);
                 });

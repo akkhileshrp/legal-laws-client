@@ -63,7 +63,6 @@
     left: 2%;
     max-height: 230px;
     overflow-y: auto;
-    z-index: 1000;
 }
 
 .search-item {
@@ -78,6 +77,7 @@
 
 .search-item:hover {
     background-color: rgb(189, 188, 188);
+    border-radius: 10px;
 }
 
 .search-item:last-child {
