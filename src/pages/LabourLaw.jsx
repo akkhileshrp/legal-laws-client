@@ -19,7 +19,7 @@ export default function LabourLaw() {
     const [input, setInput] = useState("");
     const [result, setResult] = useState([]);
     const fetchResult = (value) => {
-        fetch("http://localhost:8000/lawsandregulations/labourlaws/", {
+        fetch("https://legal-laws-server.onrender.com/lawsandregulations/labourlaws/", {
             method: "GET",
             headers: { Authorization: `Bearer ${loggedUserData.loggedUser.token}` }
         })
