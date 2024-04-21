@@ -17,6 +17,7 @@ export default function PropertyLaw() {
     ];
     const [input, setInput] = useState("");
     const [result, setResult] = useState([]);
+    const [selectedSection, setSelectedSection] = useState(null);
     const fetchData = (value) => {
         fetch("https://legal-laws-server.onrender.com/lawsandregulations/propertylaws/", {
             method: "GET",
@@ -35,6 +36,10 @@ export default function PropertyLaw() {
         setInput(value);
         fetchData(value);
     };
+    const handleItemClick = (item) => {
+        setSelectedSection(item);
+    };
+
     return (
         <>
             <Navbar />
@@ -50,13 +55,14 @@ export default function PropertyLaw() {
                 {result.length !== 0 ? (
                     <div className="search-results">
                         {result.map((item) => (
-                            <p className="search-item" key={item._id}>
+                            <p className="search-item" key={item._id} onClick={() => handleItemClick(item)}>
                                 {item.section_title}
                             </p>
                         ))}
                     </div>
                 ) : null}
             </div>
+
             <div className="property-law-hero">
                 <img src={herobanner} alt="hero-banner" className="property-hero-img" />
                 <div className="separate">
@@ -79,6 +85,7 @@ export default function PropertyLaw() {
                     );
                 })}
             </div>
+            {selectedSection !== null ? <LawDescriptionPage result={selectedSection} /> : null}
         </>
     );
 };

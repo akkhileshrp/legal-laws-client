@@ -1,7 +1,7 @@
 import React from "react";
 
-export default function LawDescriptionPage() {
+export default function LawDescriptionPage({ result }) {
     return (
-        <div>LawDescriptionPage</div>
+        <div>{result.section_title}</div>
     );
 };
