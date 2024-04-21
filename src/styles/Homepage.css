@@ -181,3 +181,27 @@
     text-align: center;
     margin-top: 5%;
 }
+
+@media (max-width: 480px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .main-logo {
+        height: 60vh;
+        width: 100%;
+    }
+
+    .sub-img {
+        height: 140px;
+        width: 140px;
+        top: 195px;
+        left: 245px;
+    }
+
+    .homepage-content {
+        font-size: 10px;
+        line-height: 38px;
+        top: 16%;
+    }
+}
