@@ -38,6 +38,12 @@ export default function PropertyLaw() {
     };
     const handleItemClick = (item) => {
         setSelectedSection(item);
+        setResult([]);
+        setInput("");
+        window.scrollTo({
+            top: document.documentElement.scrollHeight,
+            behavior: "smooth",
+        });
     };
 
     return (
@@ -85,7 +91,7 @@ export default function PropertyLaw() {
                     );
                 })}
             </div>
-            {selectedSection !== null ? <LawDescriptionPage result={selectedSection} /> : null}
+            {selectedSection !== null ? <LawDescriptionPage selectedSection={selectedSection} /> : null}
         </>
     );
 };

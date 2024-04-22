@@ -1,0 +1,72 @@
+.detail-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.description {
+    margin-top: 24px;
+    height: 150vh;
+}
+
+.detail-sub-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    max-width: 80%;
+    margin-top: -70em;
+    height: fit-content;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.detail-sub-container h1 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.detail-sub-container span {
+    color: red;
+}
+
+.detailed-desc div {
+    overflow-y: auto;
+    max-height: 300px;
+    padding-right: 20px;
+}
+
+.section-desc-content {
+    margin-top: 10px;
+}
+
+.main-contents {
+    margin-top: 1.5em;
+    text-align: left;
+}
+
+.main-contents p {
+    color: red;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 26px;
+    margin-left: 2%;
+}
+
+.main-logo div {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 25px;
+    margin-left: 2%;
+}
+
+.detailed-desc {
+    margin-top: -21%;
+}
+
+.detailed-desc div {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 25px;
+    margin-left: 2%;
+}

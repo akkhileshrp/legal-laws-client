@@ -30,7 +30,6 @@ export default function App() {
                     <Route path="/contact" element={<RouteProtection Component={Contact} />} />
                     <Route path="/lawsandregulations" element={<RouteProtection Component={LawsandRegulations} />} />
                     <Route path="/lawsandregulations/propertylaw" element={<RouteProtection Component={PropertyLaw} />} />
-                    <Route path="/lawsandregulations/propertylaw/:id" element={<RouteProtection Component={LawDescriptionPage} />} />
                     <Route path="/lawsandregulations/educationlaw" element={<RouteProtection Component={EducationalLaw} />} />
                     <Route path="/lawsandregulations/healthlaw" element={<RouteProtection Component={HealthLaw} />} />
                     <Route path="/lawsandregulations/criminallaw" element={<RouteProtection Component={CriminalLaw} />} />
