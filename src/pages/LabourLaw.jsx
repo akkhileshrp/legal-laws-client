@@ -14,10 +14,10 @@ export default function LabourLaw() {
         { image: labour_bullet, title: "Working Conditions: ", description: "These laws establish safety standards to protect workers from hazards in the workplace, such as dangerous machinery, toxic chemicals, or unsafe working environments." },
         { image: labour_bullet, title: "Wages and Hours: ", description: "Labor laws set minimum wage levels and regulate the number of hours employees can work in a day or week to prevent exploitation and ensure fair compensation for their time and effort." },
         { image: labour_bullet, title: "Family and Medical Leave: ", description: "Labor laws provide provisions for family and medical leave, allowing workers to take time off for personal or family health reasons without risking their job security." },
-        { image: labour_bullet, title: "Unemployment Benefits: ", description: "These laws establish eligibility criteria and procedures for workers to claim unemployment benefits if they lose their job through no fault of their own, providing temporary financial assistance during periods of unemployment." },
     ];
     const [input, setInput] = useState("");
     const [result, setResult] = useState([]);
+    const [selectedSection, setSelectedSection] = useState(null);
     const fetchResult = (value) => {
         fetch("https://legal-laws-server.onrender.com/lawsandregulations/labourlaws/", {
             method: "GET",
@@ -37,6 +37,15 @@ export default function LabourLaw() {
         setInput(value);
         fetchResult(value);
     };
+    const handleItemClick = (item) => {
+        setSelectedSection(item);
+        setResult([]);
+        setInput("");
+        window.scrollTo({
+            top: document.documentElement.scrollHeight,
+            behavior: "smooth",
+        });
+    };
     return (
         <>
             <Navbar />
@@ -52,7 +61,7 @@ export default function LabourLaw() {
                 {result.length !== 0 ? (
                     <div className="search-results">
                         {result.map((item) => (
-                            <p className="search-item" key={item._id}>
+                            <p className="search-item" key={item._id} onClick={() => handleItemClick(item)}>
                                 {item.section_title}
                             </p>
                         ))}
@@ -81,6 +90,7 @@ export default function LabourLaw() {
                     );
                 })}
             </div>
+            {selectedSection !== null ? <LawDescriptionPage selectedSection={selectedSection} /> : null}
         </>
     );
 };

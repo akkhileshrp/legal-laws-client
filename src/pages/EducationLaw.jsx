@@ -14,10 +14,10 @@ export default function EducationalLaw() {
         { image: educational_bullet, title: "Equal Access: ", description: "Education law ensures that every individual, regardless of their location or identity, has the opportunity to access education and acquire knowledge. It mandates that education be inclusive, equitable, and accessible to all, fostering personal development, societal progress, and the realization of human potential without discrimination or barriers." },
         { image: educational_bullet, title: "Special Education: ", description: "Special education caters to students with diverse learning needs, offering tailored support and services to ensure academic and personal success." },
         { image: educational_bullet, title: "Teacher Rights: ", description: "Teacher rights include the right to fair compensation, safe working conditions, academic freedom, due process in employment decisions, freedom from discrimination, and the ability to advocate for students' needs." },
-        { image: educational_bullet, title: "School Policies: ", description: "School policies are rules and guidelines that govern the conduct and operations of a school. They cover areas such as student behavior, academic standards, attendance requirements, dress codes, and safety measures." },
     ];
     const [input, setInput] = useState("");
     const [result, setResult] = useState([]);
+    const [selectedSection, setSelectedSection] = useState(null);
     const fetchResult = (value) => {
         fetch("https://legal-laws-server.onrender.com/lawsandregulations/educationlaws/", {
             method: "GET",
@@ -36,6 +36,15 @@ export default function EducationalLaw() {
         setInput(value);
         fetchResult(value);
     };
+    const handleItemClick = (item) => {
+        setSelectedSection(item);
+        setResult([]);
+        setInput("");
+        window.scrollTo({
+            top: document.documentElement.scrollHeight,
+            behavior: "smooth",
+        });
+    };
     return (
         <>
             <Navbar />
@@ -51,7 +60,7 @@ export default function EducationalLaw() {
                 {result.length !== 0 ? (
                     <div className="search-results">
                         {result.map((item) => (
-                            <p className="search-item" key={item._id}>
+                            <p className="search-item" key={item._id} onClick={() => handleItemClick(item)}>
                                 {item.section_title}
                             </p>
                         ))}
@@ -80,6 +89,7 @@ export default function EducationalLaw() {
                     );
                 })}
             </div>
+            {selectedSection !== null ? <LawDescriptionPage selectedSection={selectedSection} /> : null}
         </>
     );
 };

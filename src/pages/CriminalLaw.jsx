@@ -17,6 +17,7 @@ export default function CriminalLaw() {
     ];
     const [input, setInput] = useState("");
     const [result, setResult] = useState([]);
+    const [selectedSection, setSelectedSection] = useState(null);
     const fetchResult = (value) => {
         fetch("https://legal-laws-server.onrender.com/lawsandregulations/criminallaws/", {
             method: "GET",
@@ -35,6 +36,15 @@ export default function CriminalLaw() {
         setInput(value);
         fetchResult(value);
     };
+    const handleItemClick = (item) => {
+        setSelectedSection(item);
+        setResult([]);
+        setInput("");
+        window.scrollTo({
+            top: document.documentElement.scrollHeight,
+            behavior: "smooth",
+        });
+    };
     return (
         <>
             <Navbar />
@@ -50,7 +60,7 @@ export default function CriminalLaw() {
                 {result.length !== 0 ? (
                     <div className="search-results">
                         {result.map((item) => (
-                            <p className="search-item" key={item._id}>
+                            <p className="search-item" key={item._id} onClick={() => handleItemClick(item)}>
                                 {item.section_title}
                             </p>
                         ))}
@@ -79,6 +89,7 @@ export default function CriminalLaw() {
                     );
                 })}
             </div>
+            {selectedSection !== null ? <LawDescriptionPage selectedSection={selectedSection} /> : null}
         </>
     );
 };

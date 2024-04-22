@@ -15,8 +15,12 @@ export default function LawDescriptionPage({ selectedSection }) {
                         <div className="main-logo">
                             <p>Chapter</p>
                             <div>{selectedSection.chapter}</div>
-                            <p>Chapter Title</p>
-                            <div>{selectedSection.chapter_title}</div>
+                            {selectedSection.chapter_title && (
+                                <>
+                                    <p>Chapter Title</p>
+                                    <div>{selectedSection.chapter_title}</div>
+                                </>
+                            )}
                             <p>Section</p>
                             <div>{selectedSection.Section}</div>
                             <p>Section Title</p>
