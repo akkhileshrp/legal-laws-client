@@ -61,7 +61,12 @@
 }
 
 .detailed-desc {
-    margin-top: -20%;
+    margin-top: -45%;
+}
+
+.desc
+{
+    overflow-y: scroll;
 }
 
 .detailed-desc div {

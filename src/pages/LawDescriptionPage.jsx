@@ -25,10 +25,8 @@ export default function LawDescriptionPage({ selectedSection }) {
                             <div>{selectedSection.Section}</div>
                             <p>Section Title</p>
                             <div>{selectedSection.section_title}</div>
-                        </div>
-                        <div className="detailed-desc">
                             <p>Section Description</p>
-                            <div>{selectedSection.section_desc}</div>
+                            <div className="desc">{selectedSection.section_desc}</div>
                         </div>
                     </div>
                 </div>
